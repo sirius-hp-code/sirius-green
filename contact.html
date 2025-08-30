@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - 就労支援A型事業所シリウス</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@100..900&family=Zen+Old+Mincho&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="contact">
+        <!-- rogo -->
+        <a href="index.html">
+            <img src="./contact_images/top_logo.png" alt="就労支援A型事業所シリウスのロゴ"></a>
+    </header>
+
+    <p class="form">お問い合わせ</p>
+
+    <div class="mountain"><img src="./contact_images/contact_mountain.png" alt=""></div>
+
+    <form action="#">
+        <div class="formItem">
+            <p class="formL"><span class="req">必須</span>お問い合わせ内容</p>
+
+            <!--<div class="formR radio">
+                <label><input type="radio" name="kind" value="0">見学予約</label> <label><input type="radio" name="kind"
+                        value="1">お問合せ</label>
+            </div>-->
+
+            <div class="radio-group">
+                <label class="radio-wrapper">
+                    <span>見学予約</span>
+                    <input type="radio" name="inquiry_type" value="0">
+                    <span class="custom-radio"></span>
+                </label>
+
+                <label class="radio-wrapper">
+                    <span>お問合せ</span>
+                    <input type="radio" name="inquiry_type" value="1">
+                    <span class="custom-radio"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <div class="formItem">
+            <p class="formL"><span class="req">必須</span>お名前</p>
+            <div class="formR">
+                <label><input type="text" name="name" required></label></p>
+            </div>
+        </div>
+
+        <div class="formItem">
+            <p class="formL"><span class="req">必須</span>電話番号</p>
+            <div class="formR">
+                <label><input type="tel" name="tel" required></label></p>
+            </div>
+        </div>
+
+        <div class="formItem">
+            <p class="formL"><span class="req">必須</span>メールアドレス</p>
+            <div class="formR">
+                <label><input type="email" name="email" required></label></p>
+            </div>
+        </div>
+
+        <div class="formItem">
+            <p class="formL"><span class="any">任意</span>障害福祉サービス受給者証</p>
+            <!--<div class="formR radio">
+                <label><input type="radio" name="kind" value="0">有</label> <label><input type="radio" name="kind"
+                        value="1">無</label>
+            </div>-->
+
+            <div class="radio-group">
+                <label class="radio-wrapper">
+                    <span>　　有　</span>
+                    <input type="radio" name="recipient_card" value="0">
+                    <span class="custom-radio"></span>
+                </label>
+
+                <label class="radio-wrapper">
+                    <span>　　無　</span>
+                    <input type="radio" name="recipient_card" value="1">
+                    <span class="custom-radio"></span>
+                </label>
+            </div>
+
+
+        </div>
+
+        <div class="formItem">
+            <p class="formL"><span class="any">任意</span>現在の就労状況</p>
+            <!--<div class="formR radio">
+                <label><input type="radio" name="kind" value="0">離職中</label> <label><input type="radio" name="kind"
+                        value="1">在職中</label>
+            </div>-->
+
+            <div class="radio-group">
+                <label class="radio-wrapper">
+                    <span>　離職中</span>
+                    <input type="radio" name="employment_status" value="0">
+                    <span class="custom-radio"></span>
+                </label>
+
+                <label class="radio-wrapper">
+                    <span>　在職中</span>
+                    <input type="radio" name="employment_status" value="1">
+                    <span class="custom-radio"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="kengaku">
+            <div class="formItem">
+                <p class="formL"><span class="req">必須</span>見学希望日：第1希望</p>
+                <div class="formR">
+                    <label><input type="date" name="tour_date_1" required></label></p>
+                </div>
+            </div>
+
+            <div class="formItem">
+                <p class="formL"><span class="req">必須</span>見学希望日：第2希望</p>
+                <div class="formR">
+                    <label><input type="date" name="tour_date_2" required></label></p>
+                </div>
+            </div>
+
+            <div class="formItem">
+                <p class="formL"><span class="req">必須</span>見学希望日：第3希望</p>
+                <div class="formR">
+                    <label><input type="date" name="tour_date_3" required></label></p>
+                </div>
+            </div>
+
+            <!-- <div class="formItem">
+                <p class="formL"><span class="req">必須</span>第3希望</p>
+                <div class="formR">
+                    <label><input type="text" name="name" required></label></p>
+                </div>
+            </div> -->
+
+        </div>
+        <div class="formItem">
+            <p class="formL"><span class="req">必須</span>お問い合わせ内容</p>
+            <div class="formR02">
+                <label><textarea name="name" rows="8"></textarea></label></p>
+            </div>
+        </div>
+
+        <div>
+            <p class="btn"><input type="image" src="./contact_images/contact_btn.png" alt="送信する"></p>
+        </div>
+
+
+    </form>
+
+    <!-- アクセス　はじまり -->
+
+    <div id="access">
+
+        <div class="accessWrap">
+            <div class="sec04">
+                <h2 class="left-aligned-h2">アクセス</h2>
+                <div class="accessinfo">
+                    <div id="address">
+                        <h3>所在地</h3>
+                        <p>〒 540-0005大阪府大阪市中央区上町<br>
+                            1-27-16-2F<br>
+                            営業時間　午前09:00～午後06:00<br>
+                            電話番号　06-4303-5880<br>
+                            メールアドレス sirius@pipe.co.jp<br>
+                        <p class="walk">谷町六丁目駅⑦出口から徒歩５分</p>
+                        </p>
+                        <div class="onlyPC">
+                            <h3>sns</h3>
+                            <a href="https://lin.ee/ZC2xeyY"><img src="./toppage_images/top_line.png"
+                                    alt="LINEのアイコン"></a>
+                            <a href="https://x.com/info_a_sirius"><img src="./toppage_images/top_x.png"
+                                    alt="xのアイコン"></a>
+                            <a href="https://www.instagram.com/sirius_202507/"><img src="./toppage_images/top_insta.png"
+                                    alt="Instagramのアイコン"></a>
+
+                            <div class="contact">
+                                <a href="contact.html"><img src="./toppage_images/top_contact.png" alt="お問い合わせフォーム"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="googlemap">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.1289875478383!2d135.5189094750127!3d34.67669388450178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e735ea525749%3A0xdc22ab3a9289a2ff!2z44CSNTQwLTAwMDUg5aSn6Ziq5bqc5aSn6Ziq5biC5Lit5aSu5Yy65LiK55S677yR5LiB55uu77yS77yX4oiS77yR77yWIOe-jueZu-WIqeODk-ODqyAyZg!5e0!3m2!1sja!2sjp!4v1755753933345!5m2!1sja!2sjp"
+                            width="585" height="340" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="onlySP">
+                        <h3>sns</h3>
+                        <div class="snsicon">
+                            <a href="https://lin.ee/ZC2xeyY"><img src="./toppage_images/top_line.png"
+                                    alt="LINEのアイコン"></a>
+                            <a href="https://x.com/info_a_sirius"><img src="./toppage_images/top_x.png"
+                                    alt="xのアイコン"></a>
+                            <a href="https://www.instagram.com/sirius_202507/"><img src="./toppage_images/top_insta.png"
+                                    alt="Instagramのアイコン"></a>
+                        </div>
+                        <div class="contact">
+                            <a href="contact.html"><img src="./toppage_images/top_contact.png" alt="お問い合わせフォーム"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- アクセス　おわり -->
+    <footer>
+        <div class="leaf">
+            <a href="#contact">TOPにもどる</a>
+        </div>
+        <small>© 就労継続支援A型事業所 シリウス</small>
+    </footer>
+
+</body>
+
+</html>
