@@ -1,0 +1,682 @@
+@charset "utf-8";
+
+/* ---- Base ---- */
+
+.logo {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+:root {
+  --cream: #FFF9EE;
+  --ink: #533B3B;
+  --muted: #666;
+  --accent: #78C2A4;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+html {
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* 見学予約ボタン（右上） */
+.visit-btn {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  padding: 15px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 10;
+}
+
+/* メニューボタン */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  width: 80px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* 真円背景（右上から拡大） */
+.menu-circle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vmax;
+  height: 50vmax;
+  background: #fad344;
+  /* オレンジ系背景 */
+  border-radius: 50%;
+  transform: scale(0) translate(50%, -50%);
+  transform-origin: top right;
+  /* 右上から広がる */
+  transition: transform 0.8s ease-in-out;
+  z-index: 900;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-circle {
+  aspect-ratio: 1 / 1;
+}
+
+/* メニューが開いたとき */
+.menu-circle.active {
+  transform: scale(1) translate(0, 0);
+}
+
+/* ナビゲーション */
+#g-nav {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease 0.2s;
+  text-align: center;
+}
+
+#g-nav.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#g-nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#g-nav li {
+  margin: 20px 0;
+}
+
+#g-nav li a.contact-btn {
+  display: inline-block;
+  padding: 5px 5px;
+  border: 1px solid #8c6d05;
+  /* 枠線 */
+  border-radius: 6px;
+  /* 角丸（不要なら消す） */
+  color: #8c6d05;
+}
+
+#g-nav li a {
+  text-decoration: none;
+  color: #8c6d05;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+#g-nav li a:hover {
+  border-bottom-color: #a17908;
+}
+
+/* 表示時の状態 */
+#g-nav.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.circle-bg.active {
+  transform: scale(1);
+  /* 円を拡大して画面全体を覆う */
+}
+
+/* 見学バナー */
+.visit-banner {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  width: 140px;
+}
+
+.visit-banner img {
+  width: 100%;
+  height: auto;
+}
+
+.menu-btn img {
+  width: 200px;
+  height: 100%;
+}
+
+h1.title {
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 50px;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  font-style: normal;
+}
+
+/* タイトルのデコライン */
+.title-underline {
+  position: relative;
+  display: inline-block;
+  /* 幅＝文字幅に */
+  padding: 0 .2em;
+  /* 少し余白 */
+  line-height: 1.2;
+  z-index: 0;
+}
+
+.title-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -.4em;
+  width: calc(100% + 0.8em);
+  height: clamp(10px, 1.2em, 18px);
+  background: url("../tokushoku_images/tokushoku_border.png") center/100% 100% no-repeat;
+  /* ← ココ */
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .15));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ヒーロー中央配置ならラッパーで中央寄せ */
+.hero .title {
+  text-align: center;
+}
+
+.hero {
+  display: grid;
+  place-items: center;
+  margin-top: 100px;
+}
+
+
+.service-circle {
+
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* 蝶の共通スタイル */
+.deco-butterfly {
+  position: absolute;
+  width: 90px;
+  /* お好みで */
+  height: auto;
+  z-index: 2;
+  /* 画像の上に */
+  pointer-events: none;
+  /* クリック貫通 */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .12));
+  animation: flutter 3s ease-in-out infinite;
+}
+
+/* ピンク蝶：左上にひらり */
+.deco-butterfly--p {
+  left: 10px;
+  top: -50px;
+  z-index: -1;
+}
+
+/* グリーン蝶：右上にひらり */
+.deco-butterfly--g {
+  right: 10px;
+  top: -8px;
+  animation-delay: .8s;
+  z-index: -1;
+}
+
+/* ふわふわアニメ（任意） */
+@keyframes flutter {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* スマホは少し内側へ */
+@media (max-width:600px) {
+  .deco-butterfly {
+    width: 44px;
+  }
+
+  .deco-butterfly--p {
+    left: -10px;
+    top: -12px;
+  }
+
+  .deco-butterfly--g {
+    right: -14px;
+    top: -6px;
+  }
+
+
+}
+
+
+
+/* ---------------- Intro ---------------- */
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.service-circle {
+
+  width: 200px;
+  flex-shrink: 0;
+}
+
+
+.service-text {
+  max-width: 800px;
+  color: #533B3B;
+}
+
+/* ---------------- Features ---------------- */
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+@media (min-width:900px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* ピンク蝶：左上にひらり */
+  .deco-butterfly--p {
+    left: 10px;
+    top: -100px;
+
+  }
+
+  /* グリーン蝶：右上にひらり */
+  .deco-butterfly--g {
+    right: 10px;
+    top: -100px;
+    animation-delay: .8s;
+
+  }
+
+}
+
+.feature {
+  position: relative;
+
+  height: 350px;
+  display: grid;
+  place-items: center;
+}
+
+.badge {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .08));
+}
+
+.pict {
+  position: absolute;
+  height: auto;
+}
+
+/* 01：左下に時計 */
+.feature--1 .pict--clock {
+  width: 92px;
+  left: 12px;
+  bottom: 10px;
+}
+
+/* 02：中央下に女の子 */
+.feature--2 {
+  margin-top: 60px;
+  /* 好きな数値に変更 */
+}
+
+.feature--2 .pict--girl {
+  width: 150px;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+}
+
+/* 03：右下に写真（角丸＋影） */
+.feature--3 .pict--book {
+  position: absolute;
+  width: 200px;
+  right: 50%;
+  bottom: -50px;
+  transform: translateX(50%);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+}
+
+footer {
+  padding: 30px 20px 50px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+/* アクセス */
+
+
+.left-aligned-h2 {
+
+  display: block;
+  color: #fff;
+  background-color: #AC7444;
+  border-radius: 20.5px;
+  width: 222px;
+  text-align: center;
+  line-height: 41px;
+  margin: 0 auto 25px;
+  font-family: "Noto Sans JP";
+  font-size: 20px;
+}
+
+#access {
+  background-color: #D9EADD;
+  padding-top: 160px;
+  border-radius: 50% 50% 0 0/20% 20% 0 0;
+}
+
+.accessWrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.accessinfo {
+  display: flex;
+
+  justify-content: space-between;
+  padding-bottom: 45px;
+}
+
+#address {
+  width: 30%;
+}
+
+.googlemap {
+  width: 68%;
+}
+
+.googlemap iframe {
+  width: 100%;
+}
+
+.contact img {
+  padding-top: 44px;
+}
+
+.onlySP {
+  display: none;
+}
+
+/* 谷町六丁目駅⑦出口から徒歩５分 */
+
+.walk {
+  background-color: #FFF9EE;
+  text-align: center;
+  margin: 10px 0 10px 0;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* アクセス ここまで*/
+
+/* フッター　ここから */
+
+footer {
+  height: 300px;
+  background-image: url(../toppage_images/top_footer.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-color: #D9EADD;
+  padding: 30px 20px 50px;
+  text-align: center;
+
+}
+
+footer a {
+  color: #533B3B;
+}
+
+footer a:hover {
+  border-bottom: 1px solid #533B3B;
+}
+
+
+small {
+
+  color: #888;
+  font-size: 14px;
+}
+
+.leaf {
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.leaf::before {
+  content: url(../toppage_images/top_leaf.png);
+  width: 30px;
+  height: 30px;
+
+
+}
+
+/* フッターここまで */
+
+/* ---------------- Responsive ---------------- */
+@media screen and (max-width:640px) {
+
+
+  .menu-circle {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+
+  .feature {
+    width: 320px;
+    height: 300px;
+  }
+
+  .feature--3 .pict--book {
+    width: 112px;
+  }
+
+  .logo>img {
+    width: 40vw;
+    left: 0;
+    top: 0;
+  }
+
+
+  .service {
+    flex-direction: column;
+    /* 縦並び */
+    align-items: center;
+    /* 中央にそろえる */
+    gap: 20px;
+    /* 間隔を少し狭める */
+  }
+
+  .service-text {
+    max-width: 90%;
+    /* スマホ画面いっぱい使えるように */
+    text-align: left;
+    /* 左寄せのままがいいなら left */
+  }
+
+  .visit-btn {
+    top: 15px !important;
+    left: 50% !important;
+    transform: scale(0.7);
+    /* ボタン全体を縮小 */
+  }
+
+  .menu-btn {
+    top: 10px;
+    right: 50px;
+    width: 50px;
+    /* 元80pxから縮小 */
+  }
+
+  .menu-btn img {
+    width: 120px;
+    /* 元200pxから縮小 */
+  }
+
+  h1.title {
+    font-size: 30px;
+    top: 70%;
+  }
+
+  /* ピンク蝶：左上にひらり */
+  .deco-butterfly--p {
+    left: 10px;
+    top: -80px;
+  }
+
+  /* グリーン蝶：右上にひらり */
+  .deco-butterfly--g {
+    right: 10px;
+    top: -80px;
+    animation-delay: .8s;
+  }
+
+  /* アクセスここから */
+
+
+
+  .accessinfo {
+    flex-direction: column;
+  }
+
+  .snsicon {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .onlyPC {
+    display: none;
+  }
+
+  .onlySP {
+    display: block;
+    text-align: center;
+  }
+
+  .accessinfo {
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  #address {
+    width: max-content;
+    margin: 0 auto 2rem;
+  }
+
+  .googlemap {
+    width: 80%;
+    margin: 0 auto 2rem;
+  }
+
+
+  /* アクセスここまで */
+}
+
+@media screen and (max-width:480px) {
+  .visit-btn {
+    top: 0px !important;
+    right: 0px !important;
+    transform: scale(0.4);
+    /* さらに縮小 */
+    margin-right: 50vw;
+  }
+
+  .menu-btn img {
+    width: 100px;
+    /* さらに縮小 */
+    height: auto;
+    display: block;
+  }
+
+
+
+  #g-nav li {
+    margin: 10px 0;
+  }
+
+  #g-nav li a {
+    font-size: 16px;
+  }
+
+
+  .menu-circle {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* .visit-btn {
+    top: 0px !important;
+    right: 30px !important;
+    transform: scale(0.55);
+  } */
+
+  .menu-btn img {
+    width: 100px;
+    /* さらに縮小 */
+    height: auto;
+    display: block;
+  }
+}

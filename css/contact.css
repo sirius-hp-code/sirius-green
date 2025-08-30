@@ -1,0 +1,395 @@
+body {
+    background-image: url(../contact_images/check.jpg);
+    background-size: 20%;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #533B3B;
+}
+
+form {
+    width: 75%;
+    background-color: #FFF9EE;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.formItem {
+    display: flex;
+    margin: 50px 0 50px 0;
+}
+
+.kengaku .formItem {
+    margin: 10px 0;
+}
+
+form div .formR02 {
+    width: 65%;
+}
+
+.formL {
+    width: 35%;
+    line-height: 3em;
+}
+
+.formR {
+    width: 65%;
+    display: flex;
+    /* background-color: #D9D9D9;*/
+    background-color: #D9D9D9;
+    border-radius: 45px;
+    line-height: 3em;
+}
+
+.formR label,
+.formR02 label {
+    width: 100%;
+}
+
+.formR input,
+.formR02 textarea {
+    width: 100%;
+}
+
+.formR.radio {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background-color: #FFF9EE;
+}
+
+.req {
+    background-color: #FEDB70;
+    font-size: 12px;
+    padding: 0.25em 0.5em;
+    margin-right: 0.5em;
+}
+
+.any {
+    background-color: #9ED6E0;
+    font-size: 12px;
+    padding: 0.25em 0.5em;
+    margin-right: 0.5em;
+}
+
+.form {
+    width: 50%;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    padding: 50px;
+    background-color: #FFF9EE;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.mountain img {
+    width: 100%;
+}
+
+.btn {
+    text-align: center;
+}
+
+.Radio-Input {
+    appearance: none;
+    position: absolute;
+}
+
+input[type=radio] {
+    display: none;
+    /* ラジオボタンを非表示にする */
+}
+
+input[type="text"],
+[type="tel"],
+[type="email"],
+[type="date"] {
+    padding: 0 20px 0 20px;
+}
+
+textarea {
+    padding: 20px;
+    font-size: 16px;
+    /* 文字サイズを設定 */
+    resize: vertical;
+    /* サイズ変更機能を無効化 */
+    line-height: 1.5;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    background-color: #D9D9D9;
+    border-radius: 45px;
+    line-height: 1.5;
+}
+
+input[type=radio] {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: inline-block;
+    position: relative;
+}
+
+input[type="radio"]:checked+input[type="radio"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    /* 中央の色 */
+    border-radius: 50%;
+}
+
+.radio-group {
+    width: 65%;
+    display: flex;
+    gap: 60px;
+    /* 有と無の間隔 */
+    align-items: center;
+    justify-content: center;
+    /*height: 100vh;*/
+}
+
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* ラジオボタンを非表示 */
+.radio-wrapper input[type="radio"] {
+    display: none;
+}
+
+/* カスタムラジオボタンの外見 */
+.custom-radio {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+    /* グレー */
+    display: inline-block;
+    position: relative;
+}
+
+/* 選択されたときに表示される中心の円 */
+.radio-wrapper input[type="radio"]:checked+.custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-color: #533B3B;
+    /* 中央の色 */
+    border-radius: 50%;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+/* アクセス */
+
+
+.left-aligned-h2 {
+    margin-bottom: 25px;
+}
+
+#access {
+    background-color: #D9EADD;
+    padding-top: 160px;
+    border-radius: 50% 50% 0 0/20% 20% 0 0;
+}
+
+.accessWrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accessinfo {
+    display: flex;
+
+    justify-content: space-between;
+    padding-bottom: 45px;
+}
+
+#address {
+    width: 30%;
+}
+
+.googlemap {
+    width: 68%;
+}
+
+.googlemap iframe {
+    width: 100%;
+}
+
+.contact img {
+    padding-top: 44px;
+}
+
+.onlySP {
+    display: none;
+}
+
+/* 谷町六丁目駅⑦出口から徒歩５分 */
+
+.walk {
+    background-color: #FFF9EE;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.contact {
+
+    display: none;
+}
+
+/* アクセス ここまで*/
+
+h2 {
+    display: block;
+    color: #fff;
+    background-color: #AC7444;
+    border-radius: 20.5px;
+    width: 222px;
+    text-align: center;
+    line-height: 41px;
+    margin: 0 auto;
+    font-family: "Noto Sans JP";
+}
+
+/* フッター　ここから */
+
+footer {
+    height: 300px;
+    background-image: url(../contact_images/top_footer.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #D9EADD;
+    text-align: center;
+}
+
+footer a {
+    color: #533B3B;
+}
+
+footer a:hover {
+    border-bottom: 1px solid #533B3B;
+}
+
+small {
+    color: #888;
+    font-size: 14px;
+}
+
+.leaf {
+    text-align: center;
+    font-size: 18px;
+}
+
+.leaf::before {
+    content: url(../contact_images/top_leaf.png);
+    width: 30px;
+    height: 30px;
+}
+
+/* フッターここまで */
+
+/*レスポンシブデザインここから*/
+
+@media screen and (max-width:640px) {
+
+    .formItem,
+    .formR,
+    .formR,
+    .radio,
+    textarea,
+    .radio-group,
+    .radio-wrapper {
+        display: block;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .form {
+        width: 80%;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    .formL {
+        width: 100%;
+    }
+
+    .formR {
+        width: 100%;
+    }
+
+    form div .formR02 {
+        width: 100%;
+    }
+
+    .radio-wrapper {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    /* アクセスここから */
+
+
+
+    .accessinfo {
+        flex-direction: column;
+    }
+
+    .snsicon {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .onlyPC {
+        display: none;
+    }
+
+    .onlySP {
+        display: block;
+        text-align: center;
+    }
+
+    .accessinfo {
+        width: 100%;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    #address {
+        width: max-content;
+        margin: 0 auto 2rem;
+    }
+
+    .googlemap {
+        width: 80%;
+        margin: 0 auto 2rem;
+    }
+
+    /* アクセスここまで */
+
+}
+
+/*レスポンシブデザインここまで*/

@@ -1,0 +1,1291 @@
+@charset "UTF-8";
+
+
+
+
+/* 共通部分 */
+body {
+
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", sans-serif, "Hina Mincho", serif;
+    background-color: #fffdf6;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #fff9ee;
+    color: #533B3B;
+    font-family: "Noto Sans JP", serif,
+        sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* ロゴ（左上） */
+.logo {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.logo img {
+    justify-content: space-between;
+}
+
+h2 {
+    display: block;
+    color: #fff;
+    background-color: #AC7444;
+    border-radius: 20.5px;
+    width: 222px;
+    text-align: center;
+    line-height: 41px;
+    margin: 0 auto;
+    font-family: "Noto Sans JP";
+
+}
+
+.concept,
+.customersvoiceFAQ,
+.staff,
+.sec04 {
+
+
+
+    margin: 0 auto;
+
+
+
+}
+
+
+
+footer {
+    height: 300px;
+    background-image: url(../toppage_images/top_footer.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #D9EADD;
+}
+
+
+/* アクセス */
+
+
+.left-aligned-h2 {
+    margin-bottom: 25px;
+}
+
+#access {
+    background-color: #D9EADD;
+    padding-top: 160px;
+    border-radius: 50% 50% 0 0/20% 20% 0 0;
+}
+
+.accessWrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accessinfo {
+    display: flex;
+
+    justify-content: space-between;
+    padding-bottom: 45px;
+}
+
+#address {
+    width: 30%;
+}
+
+.googlemap {
+    width: 68%;
+}
+
+.googlemap iframe {
+    width: 100%;
+}
+
+.contact img {
+    padding-top: 44px;
+}
+
+.onlySP {
+    display: none;
+}
+
+/* 谷町六丁目駅⑦出口から徒歩５分 */
+
+.walk {
+    background-color: #FFF9EE;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* アクセス ここまで*/
+/* フッター　ここから */
+
+footer {
+
+    background-image: url(../toppage_images/top_footer.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #D9EADD;
+    text-align: center;
+
+}
+
+footer a {
+    color: #533B3B;
+
+
+}
+
+footer a:hover {
+    border-bottom: 1px solid #533B3B;
+}
+
+small {
+
+    color: #888;
+    font-size: 14px;
+}
+
+.leaf {
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.leaf::before {
+    content: url(../toppage_images/top_leaf.png);
+}
+
+/* フッターここまで */
+
+/* 共通部分 ここまで*/
+
+/* topページ　ここから */
+/* ファーストビュー　ここから */
+chactcop
+
+/* ヘッダーエリア全体 */
+header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.top {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.firstView {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    aspect-ratio: 10 / 9;
+}
+
+
+
+/* 見学予約ボタン（右上） */
+.visit-btn {
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 700;
+}
+
+/* メニューボタン */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    width: 80px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-btn img {
+    width: 200px;
+    height: 100%;
+}
+
+
+/* 真円背景（右上から拡大） */
+.circle-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vmax;
+    height: 50vmax;
+    background: #fad344;
+    /* オレンジ系背景 */
+    border-radius: 50%;
+    transform: scale(0) translate(50%, -50%);
+    transform-origin: top right;
+    /* 右上から広がる */
+    transition: transform 0.8s ease-in-out;
+    z-index: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* メニューが開いたとき */
+.circle-bg.active {
+    transform: scale(1) translate(0, 0);
+}
+
+
+/* ナビゲーション */
+#g-nav {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease 0.2s;
+    text-align: center;
+}
+
+#g-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#g-nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#g-nav li {
+    margin: 20px 0;
+}
+
+#g-nav li a.contact-btn {
+    display: inline-block;
+    padding: 5px 5px;
+    border: 1px solid #8c6d05;
+    /* 枠線 */
+    border-radius: 6px;
+    /* 角丸（不要なら消す） */
+    color: #8c6d05;
+}
+
+#g-nav li a {
+    text-decoration: none;
+    color: #8c6d05;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+#g-nav li a:hover {
+    border-bottom-color: #a17908;
+}
+
+/* 表示時の状態 */
+#g-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.circle-bg.active {
+    transform: scale(1);
+    /* 円を拡大して画面全体を覆う */
+}
+
+/* 見学バナー */
+.visit-banner {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    width: 140px;
+}
+
+.visit-banner img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* キャッチコピー */
+
+.catcucopyWrap {
+    max-width: 1000px;
+    position: absolute;
+    top: 100px;
+    left: 2em;
+    z-index: 10;
+}
+
+.catchcopy {
+    font-size: clamp(16px, 4vw, 30px);
+    font-family: 'Hina Mincho', serif;
+    line-height: 1.6;
+    color: #533B3B;
+    text-align: left;
+    text-indent: -1em;
+}
+
+.large {
+    font-size: clamp(26px, 6vw, 42px);
+}
+
+/* メイン画像 */
+.main-image {
+    position: absolute;
+    top: 150px;
+    right: -40px;
+    max-width: 850px;
+    width: 85%;
+    z-index: 5;
+    opacity: 0;
+    animation: floatOutMain 2.5s ease forwards;
+}
+
+/* サブ画像 */
+
+
+.sub_imageWrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+}
+
+.sub-image {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    max-width: 600px;
+    animation: floatOutSub 2.5s ease forwards;
+    animation-delay: 0.6s;
+}
+
+
+/* メイン用アニメーション（translateX含む） */
+@keyframes floatOutMain {
+    0% {
+        opacity: 0;
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.15));
+        transform: scale(0.);
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.25));
+        transform: scale(1);
+    }
+}
+
+/* サブ用アニメーション（translateXなし） */
+@keyframes floatOutSub {
+    0% {
+        opacity: 0;
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.15));
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.25));
+        transform: scale(1);
+    }
+}
+
+/* 揺れる木（アニメーション付き） */
+
+.treeWrap {
+    position: absolute;
+    top: 250px;
+    left: -40px;
+    z-index: 3;
+    max-width: 300px;
+    width: 40%;
+}
+
+.tree {
+    width: 100%;
+    animation: swayTree 4s ease-in-out infinite;
+    transform-origin: left bottom;
+}
+
+
+
+@keyframes swayTree {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+
+/* ひらひら落ちる葉っぱ */
+.falling-leaf {
+    position: absolute;
+    top: 220px;
+    right: 80px;
+    width: 60px;
+    animation: fallLeaf 8s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes fallLeaf {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(-20px, 150px) rotate(30deg);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate(20px, 300px) rotate(-20deg);
+        opacity: 0.8;
+    }
+
+    75% {
+        transform: translate(-15px, 450px) rotate(15deg);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate(10px, 600px) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+/* フッター背景（山や川） */
+.footer-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+}
+
+.footer-bg img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.circle_yellow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    height: auto;
+    z-index: 1;
+}
+
+h1 {
+    font-family: "Hina Mincho",
+        serif;
+}
+
+/* ファーストビュー　ここまで */
+/* わたしたちについてと就労継続支援A型とは？　ここから */
+
+.concept {
+    margin: 0 auto;
+}
+
+.ours {
+    background-color: transparent;
+    color: #533B3B;
+    font-family: "Zen Old Mincho",
+        serif;
+    font-size: clamp(18px, 7vw, 36px);
+    width: 100%;
+    padding: 60px 0 20px 0;
+    line-height: 136%;
+
+}
+
+.support {
+    background-color: transparent;
+    color: #533B3B;
+    font-family: "Zen Old Mincho",
+        serif;
+    font-size: 25px;
+    width: 100%;
+    padding: 90px 0 20px 0;
+    line-height: 136%;
+    letter-spacing: 5%;
+}
+
+
+
+
+.mes01 {
+    background-color: rgba(129, 205, 229, 0.14);
+    border-radius: 158px;
+    height: 296px;
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Zen Old Mincho";
+    font-size: 22px;
+
+}
+
+.mes02 {
+    background-color: rgba(129, 205, 229, 0.14);
+    border-radius: 101px;
+    height: 205px;
+    width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Zen Old Mincho";
+    font-size: 16px;
+
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+.icon a {
+    padding: 50px;
+}
+
+/* わたしたちについてと就労継続支援A型とは？　ここまで */
+
+/* 利用者の声とよくある質問　ここから */
+
+.customersvoiceFAQ {
+
+
+    padding-bottom: 10em;
+    background-image: url(../toppage_images/Group101.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.FAQWrap>img {
+    width: 15%;
+    position: absolute;
+    /* 親要素（.FAQWrap）を基準に配置 */
+    top: -65px;
+    /* 画像を上にずらす */
+    right: 100px;
+    /* 画像を左にずらす */
+    z-index: 5;
+    /* テーブルの上に表示されるようにする */
+}
+
+.h2 {
+    padding-top: 200px;
+    padding-bottom: 30px;
+}
+
+.FAQ {
+    width: 100%;
+}
+
+thead {
+
+    position: relative;
+}
+
+.yokuaru {
+    /* position: absolute; */
+    transform: translateY(25px);
+    left: 320px;
+    bottom: -50px;
+
+}
+
+.voice {
+    display: flex;
+    justify-content: space-between;
+    width: 891px;
+    margin: 0 auto;
+    line-height: 136%;
+
+}
+
+.voice01,
+.voice02 {
+    background-color: #fff;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+.voice img {
+    padding: 20px;
+}
+
+.question {
+    font-size: 18px;
+    padding: 25px;
+}
+
+.answer01,
+.answer02 {
+    text-align: left;
+
+}
+
+.qu {
+    color: #3C75A7;
+}
+
+.an {
+    color: #F096A6;
+}
+
+.que,
+.ans {
+    display: flex;
+    align-items: center;
+}
+
+.que {
+    margin-bottom: 1.5rem;
+}
+
+.FAQ span {
+    font-family: "Itim", cursive;
+    font-size: 40px;
+    padding-right: 1rem;
+}
+
+.checkseat {
+    z-index: 9999;
+}
+
+.FAQWrap {
+    background-color: #fff;
+    border-radius: 50px;
+    width: 891px;
+    height: 494px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.FAQ {
+    border: 1px solid #956134;
+    border-radius: 50px;
+    width: 869px;
+    height: 469px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 45px;
+
+}
+
+.FAQWrap>img {
+    width: 15%;
+    position: absolute;
+    /* 親要素（.FAQWrap）を基準に配置 */
+    top: -65px;
+    /* 画像を上にずらす */
+    right: 100px;
+    /* 画像を左にずらす */
+    z-index: 5;
+    /* テーブルの上に表示されるようにする */
+}
+
+
+table {
+
+
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+/* tbody {
+    height: 400px;
+} */
+
+thead h2 {
+    margin-bottom: 20px;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    width: 50%;
+    padding: 1.5rem;
+}
+
+
+
+
+.lefttop {
+    border-right: 1px solid #956134;
+}
+
+.righttop {
+    border-bottom: 1px solid #956134;
+}
+
+.leftbottom {
+    border-top: 1px solid #956134;
+
+}
+
+.rightbottom {
+    border-left: 1px solid #956134;
+
+}
+
+/* 利用者の声とよくある質問　ここまで */
+
+/* スタッフからのメッセージ ここから*/
+
+.staff {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+
+
+}
+
+.staff h2 {
+    margin-top: 20px;
+}
+
+.staffWrap {
+    background-color: #fff;
+    border-radius: 20px;
+    width: 890px;
+    height: 360px;
+    margin: 100px auto;
+
+}
+
+.rainbow img {
+    margin: -100px 100px 50px 200px;
+}
+
+.job,
+.confidence {
+    font-size: 22px;
+
+
+
+}
+
+
+
+.job {
+    background-image: url(../toppage_images/toop_hukidasi.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    text-align: center;
+    padding-bottom: 22px;
+    margin: -60px 300px 20px 50px;
+    transform: rotate(-5deg);
+
+}
+
+
+.confidence {
+    background-image: url(../toppage_images/toop_hukidasi.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    text-align: center;
+    padding-bottom: 22px;
+    margin: -40px -300px 20px 50px;
+    transform: rotate(5deg);
+}
+
+.message {
+    text-align: center;
+    letter-spacing: 1.2;
+    line-height: 1.5;
+}
+
+.staffimg {
+    margin: -150px -400px 0px -100px;
+}
+
+/* スタッフからのメッセージ ここまで*/
+
+
+/* topページ　ここまで */
+
+
+/* スマホ対応　ここから */
+/* topここから */
+
+@media screen and (max-width:640px) {
+
+
+
+
+
+
+    /* コンセプト　ここから */
+    .concept {
+        height: 1400px;
+    }
+
+    .ours {
+        font-size: 15px;
+    }
+
+    .support {
+        font-size: 13px;
+    }
+
+    .mes01 {
+        width: 326px;
+        height: 112px;
+        font-size: 9px;
+    }
+
+    .mes02 {
+        width: 286px;
+        height: 65px;
+        font-size: 9px;
+
+    }
+
+    .icon {
+        width: 100px;
+        height: 500px;
+        flex-wrap: wrap;
+
+    }
+
+    .icon img {
+
+        width: 200px;
+        height: 220px;
+    }
+
+    /* コンセプト　ここまで */
+    /* 利用者の声とQ&A ここから*/
+    .customersvoiceFAQ {
+
+        flex-wrap: wrap;
+
+
+    }
+
+
+
+
+
+    .FAQWrap {
+        font-size: 9px;
+        width: 383px;
+        /* height: 48vh; */
+
+
+    }
+
+    .FAQ {
+        width: 373px;
+        /* height: 46vh; */
+    }
+
+    table {
+        padding: 1.1rem;
+    }
+
+    .FAQ span {
+        font-family: "Itim", cursive;
+        font-size: 24px;
+        padding-right: 1rem;
+    }
+
+    /* 
+    .yokuaru {
+        position: absolute;
+        left: 75px;
+        bottom: -40px;
+    } */
+
+    .yokuaru {
+        /* position: absolute; */
+        transform: translateY(10px);
+        left: 320px;
+        bottom: -50px;
+
+    }
+
+    .costomersvoice {
+
+        margin: 0 auto;
+    }
+
+    .voice {
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .voice01,
+    .voice02 {
+        width: 90%;
+    }
+
+    .voice01 {
+        margin-bottom: 20px;
+    }
+
+    .FAQWrap>img {
+        width: 25%;
+        position: absolute;
+        /* 親要素（.FAQWrap）を基準に配置 */
+        top: -60px;
+        /* 画像を上にずらす */
+        right: 50px;
+        /* 画像を左にずらす */
+        z-index: 5;
+        /* テーブルの上に表示されるようにする */
+    }
+
+
+    /* 利用者の声とQ&A ここまで*/
+
+    /* スタッフからのメッセージ ここから*/
+
+
+    .staffWrap {
+
+
+        width: 312px;
+        height: 327px;
+        margin: 200px auto;
+        position: relative;
+
+    }
+
+    .rainbow img {
+        width: 70%;
+        position: absolute;
+        margin: 10px -60px 100px 80px;
+
+    }
+
+    .job,
+    .confidence {
+        font-size: 12px;
+
+
+
+    }
+
+
+
+    .job {
+        width: 150px;
+        height: 40px;
+        background-image: url(../toppage_images/toop_hukidasi.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        text-align: center;
+        transform: rotate(-7deg);
+        position: absolute;
+        margin: 50px 5px 20px 20px;
+
+    }
+
+
+    .confidence {
+        width: 150px;
+        background-image: url(../toppage_images/toop_hukidasi.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        text-align: center;
+        padding-bottom: 22px;
+        margin: 90px -200px -10px 150px;
+        position: absolute;
+        transform: rotate(7deg);
+    }
+
+    .message {
+
+        font-size: 10px;
+        text-align: center;
+        letter-spacing: 1.2;
+        line-height: 1.5;
+        position: absolute;
+        margin-top: 170px;
+    }
+
+    .staffimg>img {
+        width: 30%;
+        margin: 90px 0 0 50px;
+        position: absolute;
+    }
+
+    /* スタッフからのメッセージ ここまで*/
+
+
+    /* アクセスここから */
+
+
+
+    .accessinfo {
+        flex-direction: column;
+    }
+
+    .snsicon {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .onlyPC {
+        display: none;
+    }
+
+    .onlySP {
+        display: block;
+        text-align: center;
+    }
+
+    .accessinfo {
+        width: 100%;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    #address {
+        width: max-content;
+        margin: 0 auto 2rem;
+    }
+
+    .googlemap {
+        width: 80%;
+        margin: 0 auto 2rem;
+    }
+
+    /* アクセスここまで */
+
+    h2 {
+        font-size: 15px;
+    }
+
+    /* topここまで */
+
+
+    /* スマホ対応　ここまで */
+}
+
+/* ファーストビュー　ここから */
+@media screen and (max-width:640px) {
+
+    /* spファーストビュー */
+    .firstviewWrap {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    .top {
+        padding-bottom: 0;
+    }
+
+    .firstView {
+        height: calc(100vh - 90px);
+        aspect-ratio: auto;
+        overflow: hidden;
+    }
+
+    .treeWrap {
+        width: 50vw;
+        height: -100vh;
+        margin-top: 15em;
+    }
+
+    .main-image {
+        top: 180px;
+        right: auto;
+        left: 0;
+    }
+
+    .sub_imageWrap {
+        width: 50vw;
+        transform: scale(0.8);
+        top: 350px;
+        left: auto;
+        right: 60px;
+    }
+
+    .catchcopyWrap {
+        top: 0;
+    }
+
+    .footer-bg {
+        object-fit: cover;
+    }
+
+    /* spファーストビュー */
+    .feature {
+        width: 320px;
+        height: 300px;
+    }
+
+    .feature--3 .pict--book {
+        width: 112px;
+    }
+
+    .logo>img {
+        width: 40vw;
+        left: 0;
+        top: 0;
+    }
+
+
+    .service {
+        flex-direction: column;
+        /* 縦並び */
+        align-items: center;
+        /* 中央にそろえる */
+        gap: 20px;
+        /* 間隔を少し狭める */
+    }
+
+    .service-text {
+        max-width: 90%;
+        /* スマホ画面いっぱい使えるように */
+        text-align: left;
+        /* 左寄せのままがいいなら left */
+    }
+
+    .visit-btn {
+        /* top: 15px !important;
+        left: 50% !important; */
+        transform: scale(0.7);
+        transform-origin: right;
+        right: 0;
+        /* ボタン全体を縮小 */
+    }
+
+    .menu-btn {
+        top: 10px;
+        right: 50px;
+        width: 50px;
+        /* 元80pxから縮小 */
+    }
+
+    .menu-btn img {
+        width: 120px;
+        /* 元200pxから縮小 */
+    }
+
+    h1.title {
+        font-size: 30px;
+        top: 70%;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    .circle-bg {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    #g-nav li {
+        margin: 10px 0;
+    }
+
+    #g-nav li a {
+        font-size: 16px;
+    }
+
+    .visit-btn {
+        top: 0px !important;
+        right: 30px !important;
+        transform: scale(0.55);
+    }
+
+    .menu-btn img {
+        width: 100px;
+        /* さらに縮小 */
+        height: auto;
+        display: block;
+    }
+
+    .FAQWrap>img {
+        width: 15%;
+        position: absolute;
+        /* 親要素（.FAQWrap）を基準に配置 */
+        top: -25px;
+        /* 画像を上にずらす */
+        right: 20px;
+        /* 画像を左にずらす */
+        z-index: 5;
+        /* テーブルの上に表示されるようにする */
+    }
+
+    .FAQWrap {
+        font-size: 9px;
+        width: 383px;
+
+
+
+    }
+
+    .FAQ {
+        width: 373px;
+
+    }
+}
+
+/* ファーストビュー　ここまで */

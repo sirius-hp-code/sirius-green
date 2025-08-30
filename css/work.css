@@ -1,0 +1,1471 @@
+@charset "utf-8";
+/* ファーストビュー ここから */
+
+/* ヘッダーエリア全体 */
+header {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.top {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.firstView {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    aspect-ratio: 10 / 9;
+}
+
+
+
+/* 見学予約ボタン（右上） */
+/* 見学予約ボタン（右上） */
+.visit-btn {
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 100;
+}
+
+/* メニューボタン */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    width: 80px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-btn img {
+    width: 200px;
+    height: 100%;
+}
+
+
+/* 真円背景（右上から拡大） */
+.circle-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vmax;
+    height: 50vmax;
+    background: #fad344;
+    /* オレンジ系背景 */
+    border-radius: 50%;
+    transform: scale(0) translate(50%, -50%);
+    transform-origin: top right;
+    /* 右上から広がる */
+    transition: transform 0.8s ease-in-out;
+    z-index: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* メニューが開いたとき */
+.circle-bg.active {
+    transform: scale(1) translate(0, 0);
+}
+
+
+/* ナビゲーション */
+#g-nav {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease 0.2s;
+    text-align: center;
+}
+
+#g-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#g-nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#g-nav li {
+    margin: 20px 0;
+}
+
+#g-nav li a.contact-btn {
+    display: inline-block;
+    padding: 5px 5px;
+    border: 1px solid #8c6d05;
+    /* 枠線 */
+    border-radius: 6px;
+    /* 角丸（不要なら消す） */
+    color: #8c6d05;
+}
+
+#g-nav li a {
+    text-decoration: none;
+    color: #8c6d05;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+#g-nav li a:hover {
+    border-bottom-color: #a17908;
+}
+
+/* 表示時の状態 */
+#g-nav.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.circle-bg.active {
+    transform: scale(1);
+    /* 円を拡大して画面全体を覆う */
+}
+
+/* 見学バナー */
+.visit-banner {
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    width: 140px;
+}
+
+.visit-banner img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    color: #533B3B;
+    background-color: #FFF9EE;
+    line-height: 1.6;
+}
+
+.logo {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 60px auto;
+    flex-wrap: wrap;
+    /* モバイル対応 */
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: 2.2em;
+    color: #533B3B;
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+
+.heading-image {
+    height: 180px;
+    width: auto;
+    position: absolute;
+    right: 0;
+    transform: translate(100%, -30%);
+}
+
+
+.section-title {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    margin: 0 auto;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 8em;
+    height: 7px;
+    border-radius: 11px;
+    background-color: #8CCDBC;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+.heading-container img {
+    height: 200px;
+    width: auto;
+}
+
+.section-work-details {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.work-items-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    width: 280px;
+    text-align: center;
+}
+
+.work-item img {
+    width: 100%;
+}
+
+.work-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #EDF3ED;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.work-description {
+    margin-top: 10px;
+}
+
+/* 賃金例セクション */
+.section-wage {
+    text-align: center;
+    /* これが必要 */
+}
+
+.wage-title {
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+.wage-title::after {
+    content: "";
+    display: block;
+    width: 4em;
+    height: 7px;
+    border-radius: 11px;
+    background-color: #8CCDBC;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+.wage-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.balloon {
+    position: relative;
+    width: 160px;
+    /* 吹き出し画像の横幅に合わせて調整 */
+    height: 60px;
+    /* 吹き出し画像の縦幅に合わせて調整 */
+    margin-bottom: 10px;
+}
+
+.balloon img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    /* 高さを100%にすれば縦にもぴったり合う */
+    object-fit: contain;
+    /* 必要に応じて追加 */
+    z-index: 1;
+}
+
+.balloon span {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-weight: bold;
+    white-space: nowrap;
+    /* 改行させない */
+}
+
+.position-b {
+    margin-top: 300px;
+    /* 必要に応じて微調整 */
+}
+
+
+.line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.line img {
+    width: 100%;
+}
+
+.wage-item .wage {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.wage-item .wage span {
+    font-size: 1.5rem;
+    color: #e26b2f;
+}
+
+.wage {
+    display: inline-block;
+    /* 線をテキスト幅に合わせる */
+    font-size: 16px;
+    border-bottom: 2px solid #F3DACE;
+    /* アンダーライン */
+    padding-bottom: 4px;
+    /* 文字と線の間隔 */
+    margin-top: 5px;
+}
+
+.wage-note {
+    text-align: center;
+}
+
+.section-wage {
+    padding-bottom: 60px;
+    /* ライン分の余白 */
+    background: url("work_images/work_blueline.png") no-repeat bottom center;
+    background-size: cover;
+    /* 横幅いっぱい */
+}
+
+/* スケジュールセクション */
+/* =========================
+   1日のスケジュール（見出し）
+   ========================= */
+.section-schedule {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.schedule-title {
+    display: inline-block;
+    position: relative;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: #DBEBC6;
+    color: #533B3B;
+}
+
+.section-schedule>p {
+    margin: 0 0 18px;
+}
+
+/* 見出し下の2カラム（左:タイムライン / 右:写真） */
+.schedule-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* =========================
+   タイムライン（左カラム）
+   ========================= */
+.schedule-list {
+    list-style: none;
+    padding: 0 0 0 200px;
+    margin: 0;
+    width: 30%;
+    position: relative;
+}
+
+/* 縦ライン */
+.schedule-list::before {
+    content: "";
+    position: absolute;
+    left: 230px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #E7E4B7;
+    z-index: -100;
+}
+
+/* 行 */
+.schedule-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 14px 0;
+    line-height: 1.6;
+}
+
+/* 時刻カプセル（楕円） */
+.schedule-list .time {
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    color: #333;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+/* 強調する時刻だけ塗る */
+.schedule-list .time.highlight {
+    background: #DBEBC6;
+    border-color: #DBEBC6;
+    font-weight: 700;
+}
+
+/* ラベル */
+.schedule-list .label {
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+/* =========================
+   写真エリア（右カラム）
+   背景の上に「上1枚＋下2枚」で重ねる
+   ========================= */
+
+
+/* 背景（水彩） */
+.schedule-bg {
+    width: 100%;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .06));
+    border-radius: 12px;
+}
+
+.schedule-bg {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+    z-index: -1;
+}
+
+.schedule-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.schedule-images img {
+    border-radius: 80px;
+}
+
+.ph_top {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.ph_left {
+    width: 48%;
+    object-fit: cover;
+}
+
+.ph_right {
+    width: 48%;
+    object-fit: cover;
+}
+
+.schedule-photos-wrapper {
+    width: 50%;
+    max-width: 700px;
+    margin: 20px auto;
+    position: relative;
+}
+
+
+/* 勤務時間 */
+.section-hours {
+    text-align: center;
+    background-image: url(../work_images/work_clockbackgraund.png);
+    background-repeat: no-repeat;
+    /* 繰り返さない */
+    background-position: center top;
+    /* 上中央に配置 */
+    background-size: contain;
+    background-size: cover;
+    padding: 40px 20px 80px;
+    margin-top: 60px;
+    position: relative;
+}
+
+/* 中央寄せ＋影付き */
+.hours-outline {
+    background: #DBEBC6;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 1.5em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .10);
+}
+
+.hours-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hours-tree {
+    width: 200px;
+    /* サイズ調整 */
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.hours-tree.left {
+    left: 0px;
+    /* 見出しからの距離を調整 */
+}
+
+.hours-tree.right {
+    right: 0;
+    transform: translateY(-50%) scaleX(-1);
+    /* 左右反転 */
+}
+
+/* note と desc をまとめて扱うためのラッパー */
+.hours-text {
+    display: inline-block;
+    /* セクション内で中央寄せ */
+    text-align: left;
+    /* この箱の中は左揃え */
+    max-width: 600px;
+}
+
+/* 強調したい「*時差出勤制」 */
+.hours-note {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+
+/* 説明文 */
+.hours-desc {
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+/* ４つを横並びで“幅広く”配置 */
+.clock-list {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 24px auto 0;
+}
+
+.clock-item {
+    width: 25%;
+    max-width: 100px;
+    margin: 0;
+    /* figure のデフォルト余白をリセット */
+    text-align: center;
+    /* キャプションを画像の真下中央に */
+}
+
+.clock-item img {
+    width: 100%;
+    /* 画像サイズ。広げたい場合は数値UP */
+    display: block;
+}
+
+.clock-item figcaption {
+    margin-top: 8px;
+}
+
+.yellowCircle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(40%);
+    width: 20%;
+}
+
+/* 画像と時間の間隔 */
+
+
+/* ---ご利用までの流れ---*/
+#section-flow h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: #533B3B;
+    position: relative;
+    /* background-image: url(../work_images/work_pink.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 10em; */
+}
+
+#section-flow h2::before {
+    content: "";
+    display: block;
+    width: 10em;
+    height: 7px;
+    border-radius: 11px;
+    background-color: rgba(229, 184, 170, 0.47);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+#section-flow h3 {
+    font-weight: bold;
+}
+
+.flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    align-items: stretch;
+    background: #FFF6F6;
+    border: 1px solid #533B3B;
+    border-radius: 50px;
+    padding: 20px 30px;
+    max-width: 800px;
+    width: 100%;
+
+}
+
+/* STEP番号部分 */
+.step-left {
+    flex: 0 0 80px;
+    text-align: center;
+    color: #533B3B;
+    font-weight: bold;
+    font-size: 14px;
+    border-right: 1px solid #533B3B;
+    /* ←縦線 */
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    /* ←縦中央に配置 */
+    justify-content: center;
+    /* ←横中央に配置 */
+}
+
+.step-number {
+    line-height: 1.4;
+}
+
+.step-icon {
+    flex: 0 0 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    /* ←縦中央に配置 */
+    justify-content: center;
+    /* ←横中央に配置 */
+}
+
+.step-icon img {
+    width: 60px;
+}
+
+.step-content {
+    flex: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.step-content h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #533B3B;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #533B3B;
+}
+
+
+
+
+
+.left-aligned-h2 {
+
+    display: block;
+    color: #fff;
+    background-color: #AC7444;
+    border-radius: 20.5px;
+    width: 222px;
+    text-align: center;
+    line-height: 41px;
+    margin: 0 auto 25px;
+    font-family: "Noto Sans JP";
+    font-size: 20px;
+
+}
+
+#access {
+    background-color: #D9EADD;
+    padding-top: 160px;
+    border-radius: 50% 50% 0 0/20% 20% 0 0;
+}
+
+.accessWrap {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accessinfo {
+    display: flex;
+
+    justify-content: space-between;
+    padding-bottom: 45px;
+}
+
+#address {
+    width: 30%;
+}
+
+.googlemap {
+    width: 68%;
+}
+
+.googlemap iframe {
+    width: 100%;
+}
+
+.contact img {
+    padding-top: 44px;
+}
+
+.onlySP {
+    display: none;
+}
+
+/* 谷町六丁目駅⑦出口から徒歩５分 */
+
+.walk {
+    background-color: #FFF9EE;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* アクセス ここまで*/
+/* フッター　ここから */
+
+footer {
+    height: 300px;
+    background-image: url(../toppage_images/top_footer.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: #D9EADD;
+    text-align: center;
+
+}
+
+footer a {
+    color: #533B3B;
+
+
+}
+
+footer a:hover {
+    border-bottom: 1px solid #533B3B;
+}
+
+small {
+
+    color: #888;
+    font-size: 14px;
+}
+
+.leaf {
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.leaf::before {
+    content: url(../toppage_images/top_leaf.png);
+    width: 30px;
+    height: 30px;
+
+
+}
+
+/* フッターここまで */
+
+
+/* =========================
+   レスポンシブ微調整
+   ========================= */
+
+@media screen and (max-width: 640px) {
+
+    /* セクション全体の左右余白を少し広めにして読みやすく */
+    .section-work-details {
+        padding: 0 16px;
+    }
+
+    /* 見出しまわり：縦並び＆イラストは絶対配置を解除 */
+    .heading-container {
+        flex-direction: column;
+        gap: 8px;
+        margin: 32px auto 24px;
+        text-align: center;
+
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        /* タイトルを少し小さく */
+        line-height: 1.3;
+        margin: 0 auto;
+    }
+
+    .section-title::after {
+        width: 7em;
+        /* 下線短めに */
+        height: 6px;
+        bottom: -2px;
+    }
+
+    .heading-image {
+        height: 120px;
+        /* イラストは小さめ */
+        width: auto;
+        margin-top: 6px;
+
+        transform: translate(100%, -50%);
+    }
+
+    /* お仕事カード：3列→1列（中央寄せ） */
+    .work-items-container {
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .work-item {
+        width: 100%;
+        max-width: 340px;
+        /* 横幅を制限して読みやすく */
+        margin: 0 auto;
+        /* センター配置 */
+        text-align: center;
+    }
+
+    .work-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        /* 角丸でやさしい印象 */
+    }
+
+    .work-title {
+        font-size: 1rem;
+        padding: 6px 12px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+    }
+
+    .work-description {
+        margin-top: 6px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+
+    /* 賃金セクション */
+
+    .section-wage {
+        padding: 40px 16px;
+        background-size: contain;
+        /* 背景ライン縮小 */
+    }
+
+    .wage-title {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+
+    .wage-title::after {
+        width: 3em;
+        height: 5px;
+    }
+
+    /* 賃金例の3つを縦並びに */
+    .wage-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 20px;
+    }
+
+    .wage-item {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    /* 吹き出しとテキストのサイズ縮小 */
+    .balloon {
+        width: 120px;
+        height: 48px;
+        margin: 0 auto 8px;
+    }
+
+    .balloon span {
+        font-size: 0.9rem;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        /* white-space: normal; */
+        /* 必要なら改行可 */
+        text-align: center;
+    }
+
+    /* position-b の段差を解除 */
+    .position-b {
+        margin-top: 0;
+    }
+
+    /* 賃金テキスト */
+    .wage-item .wage {
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+
+    .wage-item .wage span {
+        font-size: 1.2rem;
+    }
+
+    /* 注意書きの余白と文字サイズ */
+    .wage-note {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding: 0 8px;
+    }
+
+    .line {
+        display: block;
+        /* ブロック要素に */
+        position: static;
+        /* absoluteを解除 */
+        width: 100vw;
+        /* ビューポート全幅 */
+        max-width: 100%;
+        /* 念のため */
+        height: auto;
+        margin: 0 auto;
+        /* 中央寄せ（不要なら削除） */
+    }
+
+
+    /* スケジュールセクション */
+    /* セクション全体の余白を調整 */
+    .section-schedule {
+        margin-top: 10px;
+        padding: 0 16px;
+    }
+
+    /* 見出しを少し小さく */
+    .schedule-title {
+        font-size: 1.4rem;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+    }
+
+    .section-schedule>p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    /* レイアウトを縦並びに変更 */
+    .schedule-grid {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* タイムラインを全幅で表示 */
+    .schedule-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        max-width: 100px;
+        /* 中央寄せしやすい幅に調整 */
+    }
+
+    .schedule-list::before {
+        content: "";
+        position: absolute;
+        left: 35%;
+        /* 中央に縦ライン */
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #E7E4B7;
+        transform: translateX(-50%);
+    }
+
+    .schedule-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin: 14px 0;
+        text-align: center;
+    }
+
+    .schedule-list .time {
+        min-width: 70px;
+        /* 時間の幅を固定してズレを防止 */
+        text-align: center;
+    }
+
+    .schedule-list .label {
+        flex: 1;
+        /* text-align: left; */
+    }
+
+
+    /* 写真エリアを全幅で */
+    .schedule-photos-wrapper {
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* 背景を下に敷く */
+    .schedule-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-50%);
+        width: 100%;
+        border-radius: 16px;
+        z-index: -1;
+        display: none;
+    }
+
+    /* 写真のレイアウトを縦積み */
+    .schedule-images {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0;
+    }
+
+    .schedule-images img {
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+    }
+
+    .schedule-photos-wrapper p {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+
+    /* 勤務時間セクション */
+
+    .section-hours {
+        padding: 28px 14px 56px;
+        margin-top: 28px;
+        background-position: center top;
+        background-size: cover;
+    }
+
+    /* 見出し・木の画像を少し控えめに */
+    .hours-outline {
+        font-size: 1.1em;
+        padding: 4px 12px;
+    }
+
+    .hours-header {
+        margin-bottom: 16px;
+    }
+
+    .hours-tree {
+        width: 100px;
+        top: 50%;
+    }
+
+    .hours-tree.left {
+
+        top: 10px;
+    }
+
+    .hours-tree.right {
+        top: 10px;
+        transform: translateY(-50%) scaleX(-1);
+    }
+
+    /* テキストは幅いっぱいで読みやすく */
+    .hours-text {
+        max-width: 100%;
+        width: 100%;
+        text-align: left;
+    }
+
+    .hours-note {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+
+    .hours-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* 時計リストを縦に積む */
+    .clock-list {
+        display: flex;
+        flex-wrap: wrap;
+        /* 折り返しOK */
+        justify-content: center;
+        gap: 16px 20px;
+        /* 上下・左右のすき間 */
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .clock-item {
+        width: calc(50% - 20px);
+        /* 2列分け */
+        max-width: 160px;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .clock-item img {
+        width: 80%;
+    }
+
+    .clock-item figcaption {
+        width: 80%;
+        margin-top: 6px;
+        font-size: 0.9rem;
+    }
+
+    /* 黄色の水彩も小さく */
+    .yellowCircle {
+        width: 40%;
+        right: 0;
+        bottom: 0;
+        transform: translateY(20%);
+        opacity: 0.9;
+    }
+
+    /* ご利用までの流れセクション */
+
+    #section-flow h2 {
+        font-size: 22px;
+        margin: 24px 0;
+    }
+
+    #section-flow h2::before {
+        width: 9em;
+        height: 5px;
+        bottom: 4px;
+    }
+
+    .flow-steps {
+        gap: 14px;
+        padding: 0 12px;
+    }
+
+    .step {
+        flex-direction: row;
+        /* 横並び維持 */
+        /* align-items: flex-start; */
+        padding: 12px 16px;
+        border-radius: 40px;
+        max-width: 100%;
+    }
+
+    .step-left {
+        flex: 0 0 50px;
+        /* 小さめの幅 */
+        font-size: 12px;
+        border-right: 1px solid #533B3B;
+        padding-right: 8px;
+    }
+
+    .step-number {
+        line-height: 1.3;
+    }
+
+    .step-icon {
+        flex: 0 0 50px;
+        /* アイコンも小さめ */
+        margin-left: 8px;
+    }
+
+    .step-icon img {
+        width: 40px;
+    }
+
+    .step-content {
+        flex: 1;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .step-content h3 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .step-content p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+
+
+}
+
+@media screen and (max-width:640px) {
+    .feature {
+        width: 320px;
+        height: 300px;
+    }
+
+    .feature--3 .pict--book {
+        width: 112px;
+    }
+
+    .logo>img {
+        width: 40vw;
+        left: 0;
+        top: 0;
+    }
+
+
+    .service {
+        flex-direction: column;
+        /* 縦並び */
+        align-items: center;
+        /* 中央にそろえる */
+        gap: 20px;
+        /* 間隔を少し狭める */
+    }
+
+    .service-text {
+        max-width: 90%;
+        /* スマホ画面いっぱい使えるように */
+        text-align: left;
+        /* 左寄せのままがいいなら left */
+    }
+
+    .visit-btn {
+        top: 15px !important;
+        left: 50% !important;
+        transform: scale(0.7);
+        /* ボタン全体を縮小 */
+    }
+
+    .menu-btn {
+        top: 10px;
+        right: 50px;
+        width: 50px;
+        /* 元80pxから縮小 */
+    }
+
+    .menu-btn img {
+        width: 120px;
+        /* 元200pxから縮小 */
+    }
+
+    h1.title {
+        font-size: 30px;
+        top: 70%;
+    }
+
+    /* アクセスここから */
+
+
+
+    .accessinfo {
+        flex-direction: column;
+    }
+
+    .snsicon {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .onlyPC {
+        display: none;
+    }
+
+    .onlySP {
+        display: block;
+        text-align: center;
+    }
+
+    .accessinfo {
+        width: 100%;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    #address {
+        width: max-content;
+        margin: 0 auto 2rem;
+    }
+
+    .googlemap {
+        width: 80%;
+        margin: 0 auto 2rem;
+    }
+
+    /* アクセスここまで */
+}
+
+@media screen and (max-width:480px) {
+    .visit-btn {
+        top: 0px !important;
+        right: 0px !important;
+        transform: scale(0.4);
+        /* さらに縮小 */
+        margin-right: 50vw;
+    }
+
+    .menu-btn img {
+        width: 100px;
+        /* さらに縮小 */
+        height: auto;
+        display: block;
+    }
+
+    .section-work-details {
+        margin-top: 150px;
+    }
+
+    .section-title {
+        margin-bottom: 150px;
+    }
+
+    .heading-image {
+        transform: translateX(-50%);
+        right: auto;
+        left: 50%;
+    }
+
+    .circle-bg {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    #g-nav li {
+        margin: 10px 0;
+    }
+
+    #g-nav li a {
+        font-size: 16px;
+    }
+
+    .visit-btn {
+        top: 0px !important;
+        right: 30px !important;
+        transform: scale(0.55);
+    }
+
+    .menu-btn img {
+        width: 100px;
+        /* さらに縮小 */
+        height: auto;
+        display: block;
+    }
+
+}
