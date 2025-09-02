@@ -17,7 +17,6 @@
 
 <body>
     <header id="contact">
-        <!-- rogo -->
         <a href="index.html">
             <img src="./contact_images/top_logo.png" alt="就労支援A型事業所シリウスのロゴ"></a>
     </header>
@@ -26,93 +25,71 @@
 
     <div class="mountain"><img src="./contact_images/contact_mountain.png" alt=""></div>
 
-    <form action="#">
+    <form id="contactForm">
         <div class="formItem">
             <p class="formL"><span class="req">必須</span>お問い合わせ内容</p>
-
-            <!--<div class="formR radio">
-                <label><input type="radio" name="kind" value="0">見学予約</label> <label><input type="radio" name="kind"
-                        value="1">お問合せ</label>
-            </div>-->
-
             <div class="radio-group">
                 <label class="radio-wrapper">
                     <span>見学予約</span>
-                    <input type="radio" name="inquiry_type" value="0">
+                    <input type="radio" name="entry.956533074" value="見学予約">
                     <span class="custom-radio"></span>
                 </label>
-
                 <label class="radio-wrapper">
                     <span>お問合せ</span>
-                    <input type="radio" name="inquiry_type" value="1">
+                    <input type="radio" name="entry.956533074" value="お問合せ">
                     <span class="custom-radio"></span>
                 </label>
             </div>
-
         </div>
 
         <div class="formItem">
             <p class="formL"><span class="req">必須</span>お名前</p>
             <div class="formR">
-                <label><input type="text" name="name" required></label></p>
+                <label><input type="text" name="entry.1984968814" required></label>
             </div>
         </div>
 
         <div class="formItem">
             <p class="formL"><span class="req">必須</span>電話番号</p>
             <div class="formR">
-                <label><input type="tel" name="tel" required></label></p>
+                <label><input type="tel" name="entry.1561327767" required></label>
             </div>
         </div>
 
         <div class="formItem">
             <p class="formL"><span class="req">必須</span>メールアドレス</p>
             <div class="formR">
-                <label><input type="email" name="email" required></label></p>
+                <label><input type="email" name="entry.484014897" required></label>
             </div>
         </div>
 
         <div class="formItem">
             <p class="formL"><span class="any">任意</span>障害福祉サービス受給者証</p>
-            <!--<div class="formR radio">
-                <label><input type="radio" name="kind" value="0">有</label> <label><input type="radio" name="kind"
-                        value="1">無</label>
-            </div>-->
-
             <div class="radio-group">
                 <label class="radio-wrapper">
                     <span>　　有　</span>
-                    <input type="radio" name="recipient_card" value="0">
+                    <input type="radio" name="entry.743370237" value="有">
                     <span class="custom-radio"></span>
                 </label>
-
                 <label class="radio-wrapper">
                     <span>　　無　</span>
-                    <input type="radio" name="recipient_card" value="1">
+                    <input type="radio" name="entry.743370237" value="無">
                     <span class="custom-radio"></span>
                 </label>
             </div>
-
-
         </div>
 
         <div class="formItem">
             <p class="formL"><span class="any">任意</span>現在の就労状況</p>
-            <!--<div class="formR radio">
-                <label><input type="radio" name="kind" value="0">離職中</label> <label><input type="radio" name="kind"
-                        value="1">在職中</label>
-            </div>-->
-
             <div class="radio-group">
                 <label class="radio-wrapper">
                     <span>　離職中</span>
-                    <input type="radio" name="employment_status" value="0">
+                    <input type="radio" name="entry.1564059036" value="離職中">
                     <span class="custom-radio"></span>
                 </label>
-
                 <label class="radio-wrapper">
                     <span>　在職中</span>
-                    <input type="radio" name="employment_status" value="1">
+                    <input type="radio" name="entry.1564059036" value="在職中">
                     <span class="custom-radio"></span>
                 </label>
             </div>
@@ -122,50 +99,110 @@
             <div class="formItem">
                 <p class="formL"><span class="req">必須</span>見学希望日：第1希望</p>
                 <div class="formR">
-                    <label><input type="date" name="tour_date_1" required></label></p>
+                    <label><input type="date" id="tour_date_1" required></label>
+                    <input type="hidden" name="entry.1268987641_year">
+                    <input type="hidden" name="entry.1268987641_month">
+                    <input type="hidden" name="entry.1268987641_day">
                 </div>
             </div>
 
             <div class="formItem">
                 <p class="formL"><span class="req">必須</span>見学希望日：第2希望</p>
                 <div class="formR">
-                    <label><input type="date" name="tour_date_2" required></label></p>
+                    <label><input type="date" id="tour_date_2" required></label>
+                    <input type="hidden" name="entry.401663256_year">
+                    <input type="hidden" name="entry.401663256_month">
+                    <input type="hidden" name="entry.401663256_day">
                 </div>
             </div>
 
             <div class="formItem">
                 <p class="formL"><span class="req">必須</span>見学希望日：第3希望</p>
                 <div class="formR">
-                    <label><input type="date" name="tour_date_3" required></label></p>
+                    <label><input type="date" id="tour_date_3" required></label>
+                    <input type="hidden" name="entry.1742494487_year">
+                    <input type="hidden" name="entry.1742494487_month">
+                    <input type="hidden" name="entry.1742494487_day">
                 </div>
             </div>
-
-            <!-- <div class="formItem">
-                <p class="formL"><span class="req">必須</span>第3希望</p>
-                <div class="formR">
-                    <label><input type="text" name="name" required></label></p>
-                </div>
-            </div> -->
-
         </div>
+
         <div class="formItem">
             <p class="formL"><span class="req">必須</span>お問い合わせ内容</p>
             <div class="formR02">
-                <label><textarea name="name" rows="8"></textarea></label></p>
+                <label><textarea name="entry.1011038909" rows="8" required></textarea></label>
             </div>
         </div>
+
+        <input type="hidden" name="fvv" value="1">
+        <input type="hidden" name="pageHistory" value="0">
+        <input type="hidden" name="fbzx" value="-8854850669259710252">
 
         <div>
             <p class="btn"><input type="image" src="./contact_images/contact_btn.png" alt="送信する"></p>
         </div>
-
-
     </form>
 
-    <!-- アクセス　はじまり -->
+    <div id="successMessage" style="display: none; color: green; text-align: center; margin-top: 20px;">
+        送信が完了しました！ありがとうございます。
+    </div>
 
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // デフォルトのフォーム送信を防止
+
+            // 日付フィールドの処理
+            const date1 = document.getElementById('tour_date_1').value;
+            if (date1) {
+                const [year, month, day] = date1.split('-');
+                document.querySelector('input[name="entry.1268987641_year"]').value = year;
+                document.querySelector('input[name="entry.1268987641_month"]').value = month;
+                document.querySelector('input[name="entry.1268987641_day"]').value = day;
+            }
+
+            const date2 = document.getElementById('tour_date_2').value;
+            if (date2) {
+                const [year, month, day] = date2.split('-');
+                document.querySelector('input[name="entry.401663256_year"]').value = year;
+                document.querySelector('input[name="entry.401663256_month"]').value = month;
+                document.querySelector('input[name="entry.401663256_day"]').value = day;
+            }
+
+            const date3 = document.getElementById('tour_date_3').value;
+            if (date3) {
+                const [year, month, day] = date3.split('-');
+                document.querySelector('input[name="entry.1742494487_year"]').value = year;
+                document.querySelector('input[name="entry.1742494487_month"]').value = month;
+                document.querySelector('input[name="entry.1742494487_day"]').value = day;
+            }
+
+            // フォームデータを収集
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+
+            // Googleフォームに送信
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLSehjyuK7qSKeuYXoEWccSgD1CBS7EqDlayHc4Z9z7bWzsO7dw/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // CORSエラー回避
+            })
+            .then(() => {
+                // 送信成功時の処理
+                form.reset(); // フォームをクリア
+                document.getElementById('successMessage').style.display = 'block'; // 成功メッセージ表示
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none'; // 数秒後に非表示
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('送信エラー:', error);
+                alert('送信に失敗しました。もう一度お試しください。');
+            });
+        });
+    </script>
+
+    <!-- アクセス はじまり -->
     <div id="access">
-
         <div class="accessWrap">
             <div class="sec04">
                 <h2 class="left-aligned-h2">アクセス</h2>
@@ -174,25 +211,20 @@
                         <h3>所在地</h3>
                         <p>〒 540-0005大阪府大阪市中央区上町<br>
                             1-27-16-2F<br>
-                            営業時間　午前09:00～午後06:00<br>
-                            電話番号　06-4303-5880<br>
+                            営業時間 午前09:00～午後06:00<br>
+                            電話番号 06-4303-5880<br>
                             メールアドレス sirius@pipe.co.jp<br>
                         <p class="walk">谷町六丁目駅⑦出口から徒歩５分</p>
                         </p>
                         <div class="onlyPC">
                             <h3>sns</h3>
-                            <a href="https://lin.ee/ZC2xeyY"><img src="./toppage_images/top_line.png"
-                                    alt="LINEのアイコン"></a>
-                            <a href="https://x.com/info_a_sirius"><img src="./toppage_images/top_x.png"
-                                    alt="xのアイコン"></a>
-                            <a href="https://www.instagram.com/sirius_202507/"><img src="./toppage_images/top_insta.png"
-                                    alt="Instagramのアイコン"></a>
-
+                            <a href="https://lin.ee/ZC2xeyY"><img src="./toppage_images/top_line.png" alt="LINEのアイコン"></a>
+                            <a href="https://x.com/info_a_sirius"><img src="./toppage_images/top_x.png" alt="xのアイコン"></a>
+                            <a href="https://www.instagram.com/sirius_202507/"><img src="./toppage_images/top_insta.png" alt="Instagramのアイコン"></a>
                             <div class="contact">
                                 <a href="contact.html"><img src="./toppage_images/top_contact.png" alt="お問い合わせフォーム"></a>
                             </div>
                         </div>
-
                     </div>
                     <div class="googlemap">
                         <iframe
@@ -203,31 +235,26 @@
                     <div class="onlySP">
                         <h3>sns</h3>
                         <div class="snsicon">
-                            <a href="https://lin.ee/ZC2xeyY"><img src="./toppage_images/top_line.png"
-                                    alt="LINEのアイコン"></a>
-                            <a href="https://x.com/info_a_sirius"><img src="./toppage_images/top_x.png"
-                                    alt="xのアイコン"></a>
-                            <a href="https://www.instagram.com/sirius_202507/"><img src="./toppage_images/top_insta.png"
-                                    alt="Instagramのアイコン"></a>
+                            <a href="https://lin.ee/ZC2xeyY"><img src="./toppage_images/top_line.png" alt="LINEのアイコン"></a>
+                            <a href="https://x.com/info_a_sirius"><img src="./toppage_images/top_x.png" alt="xのアイコン"></a>
+                            <a href="https://www.instagram.com/sirius_202507/"><img src="./toppage_images/top_insta.png" alt="Instagramのアイコン"></a>
                         </div>
                         <div class="contact">
                             <a href="contact.html"><img src="./toppage_images/top_contact.png" alt="お問い合わせフォーム"></a>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
-    <!-- アクセス　おわり -->
+    <!-- アクセス おわり -->
+
     <footer>
         <div class="leaf">
             <a href="#contact">TOPにもどる</a>
         </div>
         <small>© 就労継続支援A型事業所 シリウス</small>
     </footer>
-
 </body>
 
 </html>
