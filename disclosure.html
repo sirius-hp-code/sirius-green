@@ -74,11 +74,15 @@
             border-collapse: collapse;
             margin-bottom: 40px;
             min-width: 800px;
+            /* 列の幅を強制固定する設定 */
+            table-layout: fixed; 
         }
         .disclosure-table th, .disclosure-table td {
             border: 1px solid #ccc;
             padding: 15px;
             line-height: 1.6;
+            /* 文字が枠を突き抜けないようにする設定 */
+            word-break: break-all;
         }
         .disclosure-table th {
             background-color: #f7f7f7;
@@ -88,6 +92,8 @@
         .disclosure-table td {
             vertical-align: top;
         }
+
+        /* 列ごとの幅指定（15% / 15% / 70%） */
         .col-category { width: 15%; background-color: #f7f7f7; text-align: center; font-weight: bold;}
         .col-content { width: 15%; }
         .col-action { width: 70%; }
@@ -177,7 +183,7 @@
                     </tr>
                     <tr>
                         <td>事故・トラブルへの対応マニュアル等の作成等の体制の整備</td>
-                        <td>支援中の事故や送迎時のトラブル、感染症発生などに備えた詳細な対応マニュアルを整備しています。緊急時の連絡体制を明確化し、職員が過度な不安を感じことなく冷静に対応できるよう、定期的なシミュレーションを実施しています。</td>
+                        <td>支援中の事故や送迎時のトラブル、感染症発生などに備えた詳細な対応マニュアルを整備しています。緊急時の連絡体制を明確化し、職員が過度な不安を感じることなく冷静に対応できるよう、定期的なシミュレーションを実施しています。</td>
                     </tr>
                     <tr>
                         <td class="col-category" rowspan="3">生産性向上（業務改善及び働く環境改善）のための取組</td>
@@ -203,7 +209,7 @@
                     </tr>
                 </table>
             </div>
-            <p style="text-align: right;">　株式会社シリウス</p>
+            <p style="text-align: right;">2025年4月1日　株式会社シリウス</p>
         </div>
 
         <div id="r6" class="tab-content">
@@ -235,7 +241,7 @@
                     </tr>
                 </table>
             </div>
-            <p style="text-align: right;">　株式会社シリウス</p>
+            <p style="text-align: right;">2024年4月1日　株式会社シリウス</p>
         </div>
 
     </main>
@@ -254,8 +260,11 @@
 
     <script>
         function switchTab(tabId) {
+            // 全てのボタンとコンテンツから active クラスを削除
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // 選択されたタブとコンテンツに active クラスを追加
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
